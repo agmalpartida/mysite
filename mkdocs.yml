@@ -1,3 +1,157 @@
+# Copyright (c) 2022 Alberto (agmalpartida@gmail.com)
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# Project information
 site_name: My Personal Site
+site_url: https://www.albertogalvez.com
+site_author: Alberto
+site_description: >-
+  My personal site
+
+# Repository
+repo_name: agmalpartida/mysite
+repo_url: https://github.com/agmalpartida/mysite
+#edit_uri: ""
+
+# Copyright
+copyright: Copyright &copy; 2022 - agmalpartida
+
+# Configuration
 theme:
-    name: material
+  name: null
+  custom_dir: material
+  language: es
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: es
+  features:
+    - navigation.tabs
+    #- navigation.instant
+  palette:
+    scheme: slate
+    primary: blue
+    accent: cyan
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: fontawesome/solid/laptop-code
+
+# Plugins
+plugins:
+  - search
+  - awesome-pages
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      type: timeago
+      exclude:
+        - aws/*
+        - devops/*
+        - contact/*
+        - kb/index.md
+  - blog:
+      format: "[%d/%m/%Y]"
+      more-articles: “More (%)”
+      articles: 25
+  - minify:
+      minify_html: true
+  - mkdocs-video
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/agmalpartida
+    # - icon: fontawesome/brands/youtube
+    #   link: https://www.youtube.com/
+   - icon: fontawesome/brands/docker
+     link: https://hub.docker.com/r/agmalpartida/
+    # - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/<user>
+   - icon: fontawesome/brands/linkedin
+     link: https://linkedin.com/in/agmalpartida/
+#    - icon: fontawesome/brands/instagram
+#      link: https://instagram.com/<user>
+#  disqus: <username>
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - pyembed.markdown
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Google Analytics
+# google_analytics:
+#   - <code>
+#   - auto
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+
+
