@@ -35,9 +35,10 @@ copyright: Copyright &copy; 2022 - agmalpartida
 
 # Configuration
 theme:
-  name: null
-  custom_dir: material
-  language: es
+  name: material
+  # name: null
+  # custom_dir: material
+  # language: es
 
   # 404 page
   static_templates:
@@ -86,8 +87,8 @@ plugins:
 # Customization
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/agmalpartida
+   - icon: fontawesome/brands/github
+     link: https://github.com/agmalpartida
     # - icon: fontawesome/brands/youtube
     #   link: https://www.youtube.com/
    - icon: fontawesome/brands/docker
